@@ -8,9 +8,22 @@ const baseConfig = require('./webpack.config');
 
 const resolve = dir => path.join(__dirname, dir);
 
+const lessRegex = /\.less$/;
+const lessNormalRegex = new RegExp(`(\\.normal\\.less$)|(ode_modules\\${path.sep}antd)`);
+const getStyleLoaders = (mod = false) => [
+  'style-loader',
+  {
+    loader: 'css-loader',
+    options: {
+      modules: mod ? { localIdentName: '[path][name]__[local]' } : undefined
+    }
+  },
+  'less-loader',
+];
+
 module.exports = function (env) {
   const isDev = env === 'development';
-  
+
   return merge(baseConfig(env), {
     entry: resolve('../src-render/main.tsx'),
     output: {
@@ -20,8 +33,17 @@ module.exports = function (env) {
     module: {
       rules: [
         {
-          test: /\.(less|css)$/,
-          use: ['style-loader', 'css-loader', 'less-loader'],
+          test: /\.css$/,
+          use: ['style-loader', 'css-loader'],
+        },
+        {
+          test: lessRegex,
+          exclude: lessNormalRegex,
+          use: getStyleLoaders(true),
+        },
+        {
+          test: lessNormalRegex,
+          use: getStyleLoaders(),
         },
         {
           test: /\.(jpe?g|png|svg|gif)$/,
@@ -43,9 +65,11 @@ module.exports = function (env) {
         { from: resolve('../src-render/index.html'), to: resolve('../dist'), },
         { from: resolve('../src-render/static'), to: resolve('../dist/static'), },
       ]),
-      ...(isDev ? undefined : [
-        new CleanWebpackPlugin(),
-      ]),
+      ...(isDev
+        ? []
+        : [
+          new CleanWebpackPlugin(),
+        ]),
     ],
     devServer: {
       hot: true,

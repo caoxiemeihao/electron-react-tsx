@@ -3,6 +3,12 @@
  */
 import React from 'react'
 import ReactDom from 'react-dom'
+import { HashRouter } from 'react-router-dom'
 import App from './page/app'
 
-ReactDom.hydrate(<App />, document.getElementById('root'))
+(ReactDom.render || ReactDom.hydrate)(
+  <HashRouter>
+    <App />
+  </HashRouter>
+  , document.getElementById('root')
+)

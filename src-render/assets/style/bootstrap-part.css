@@ -1,0 +1,39 @@
+/**
+ * bootstrap@4 部分样式
+ */
+
+.align-items-center {
+  align-items: center !important;
+}
+
+.d-flex {
+  display: flex !important;
+}
+
+.flex-fill {
+  flex: 1 1 auto !important;
+}
+
+.h-100 {
+  height: 100%;
+}
+
+.justify-content-center {
+  justify-content: center !important;
+}
+
+.justify-content-between {
+  justify-content: space-between !important;
+}
+
+.justify-content-around {
+  justify-content: space-around !important;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.w-100 {
+  width: 100%;
+}

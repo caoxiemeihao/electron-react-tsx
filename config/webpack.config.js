@@ -33,7 +33,7 @@ module.exports = function (env) {
                     "useBuiltIns": "usage",
                     "corejs": 3,
                     // 默认是 false 开启后控制台会看到 哪些语法做了转换，Babel的日志信息，开发的时候强烈建议开启
-                    "debug": isDev,
+                    // "debug": isDev,
                   }
                 ],
                 "@babel/preset-react",
@@ -43,6 +43,12 @@ module.exports = function (env) {
               plugins: [
                 "@babel/plugin-proposal-class-properties",
                 "@babel/plugin-proposal-object-rest-spread",
+                "@babel/plugin-transform-runtime",
+                ["import", { // antd 按需引入
+                  "libraryName": "antd",
+                  "libraryDirectory": "es",
+                  "style": true,
+                },]
               ],
               cacheDirectory: true,
             },

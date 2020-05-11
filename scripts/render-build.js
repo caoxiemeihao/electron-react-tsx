@@ -1,7 +1,7 @@
 /**
  * 构建脚本
  */
-process.env.NODE_ENV === 'development';
+process.env.NODE_ENV = 'production';
 
 const path = require('path');
 const webpack = require('webpack');
