@@ -7,6 +7,7 @@ const resolve = dir => path.join(__dirname, dir);
 module.exports = function (env) {
 
   return merge(baseConfig(env), {
+    target: 'electron-render',
     entry: resolve('../src-main/main.js'),
     output: {
       path: resolve('../src-main'),

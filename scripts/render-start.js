@@ -6,15 +6,16 @@ process.env.NODE_ENV = 'development';
 const path = require('path');
 const webpack = require('webpack');
 const WebpackDevServer = require('webpack-dev-server');
-const argv = require('optimist').argv;
 const chalk = require('chalk');
+const { argv } = require('optimist');
+require('dotenv').config();
 const configFactory = require('../config/webpack.render');
 
 const config = configFactory(process.env.NODE_ENV);
 const serverConfig = config.devServer || {};
 const compiler = webpack(config);
 const server = new WebpackDevServer(compiler, serverConfig);
-const port = argv.port || 4100;
+const port = argv.port || serverConfig.port || 4000;
 
 server.listen(port, serverConfig.host || '0.0.0.0', err => {
   if (err) {

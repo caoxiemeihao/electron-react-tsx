@@ -9,16 +9,23 @@ const baseConfig = require('./webpack.config');
 const resolve = dir => path.join(__dirname, dir);
 
 const lessRegex = /\.less$/;
-const lessNormalRegex = new RegExp(`(\\.normal\\.less$)|(ode_modules\\${path.sep}antd)`);
+const lessModuleRegex = /\.module.less$/;
+// antd@4 下报错
+// const lessNormalRegex = new RegExp(`(\\.normal\\.less$)|(ode_modules\\${path.sep}antd)`);
 const getStyleLoaders = (mod = false) => [
   'style-loader',
   {
     loader: 'css-loader',
     options: {
-      modules: mod ? { localIdentName: '[path][name]__[local]' } : undefined
+      modules: mod ? { localIdentName: '[path][name]__[local]' } : undefined,
     }
   },
-  'less-loader',
+  {
+    loader: 'less-loader',
+    options: {
+      lessOptions: { javascriptEnabled: true },
+    },
+  },
 ];
 
 module.exports = function (env) {
@@ -38,12 +45,12 @@ module.exports = function (env) {
         },
         {
           test: lessRegex,
-          exclude: lessNormalRegex,
-          use: getStyleLoaders(true),
+          exclude: lessModuleRegex,
+          use: getStyleLoaders(),
         },
         {
-          test: lessNormalRegex,
-          use: getStyleLoaders(),
+          test: lessModuleRegex,
+          use: getStyleLoaders(true),
         },
         {
           test: /\.(jpe?g|png|svg|gif)$/,
@@ -72,9 +79,10 @@ module.exports = function (env) {
         ]),
     ],
     devServer: {
+      port: 4100,
       hot: true,
       contentBase: resolve('../dist'), // 静态文件服务器地址
-      stats: 'errors-only', // 'none' | 'errors-only' | 'minimal' | 'normal' | 'verbose' object
+      stats: 'minimal', // 'none' | 'errors-only' | 'minimal' | 'normal' | 'verbose' object
       // stats: { // log 信息控制
       //   assets: false, // 能关闭静态文件搬运的 log
       //   children: false, // 能关闭 mini-css-extract-plugin log

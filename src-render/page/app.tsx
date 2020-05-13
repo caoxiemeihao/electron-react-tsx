@@ -1,5 +1,5 @@
 import React from 'react'
-import LayoutBase from '@root/src-render/components/layout/base'
+import LayoutBase from '@render/components/layout/base'
 import Routes from './routes'
 import './app.normal.less'
 
