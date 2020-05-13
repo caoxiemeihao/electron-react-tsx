@@ -9,7 +9,7 @@ const baseConfig = require('./webpack.config');
 const resolve = dir => path.join(__dirname, dir);
 
 const lessRegex = /\.less$/;
-const lessModuleRegex = /\.module.less$/;
+const lessModuleRegex = /\.(mod|module).less$/;
 // antd@4 下报错
 // const lessNormalRegex = new RegExp(`(\\.normal\\.less$)|(ode_modules\\${path.sep}antd)`);
 const getStyleLoaders = (mod = false) => [

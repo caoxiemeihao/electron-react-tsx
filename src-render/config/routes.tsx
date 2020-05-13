@@ -1,9 +1,16 @@
 import React from 'react'
 import { Route, RouteProps, Switch } from 'react-router-dom'
-import Dashboard from './dashboard/dashboard'
+import Dashboard from '../page/dashboard/dashboard'
 
 const config: Array<RouteProps> = [
-  { path: '/dashboard', component: Dashboard },
+  {
+    path: '/dashboard',
+    component: Dashboard,
+  },
+  {
+    path: '/excel-download',
+    component: Dashboard,
+  },
 ]
 
 /**
