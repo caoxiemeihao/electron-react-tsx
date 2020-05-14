@@ -64,7 +64,6 @@ module.exports = function (env) {
       },
     },
     plugins: [
-      new webpack.HotModuleReplacementPlugin(),
       new HtmlWebpackPlugin({
         template: resolve('../src-render/index.html')
       }),
@@ -73,13 +72,17 @@ module.exports = function (env) {
         { from: resolve('../src-render/static'), to: resolve('../dist/static'), },
       ]),
       ...(isDev
-        ? []
+        ? [
+          // This is necessary to emit hot updates (currently CSS only):
+          new webpack .HotModuleReplacementPlugin(),
+        ]
         : [
           new CleanWebpackPlugin(),
         ]),
     ],
     devServer: {
       port: 4100,
+      // 请注意，当前只有对CSS的更改是热重加载的。JS更改将刷新浏览器。
       hot: true,
       contentBase: resolve('../dist'), // 静态文件服务器地址
       stats: 'minimal', // 'none' | 'errors-only' | 'minimal' | 'normal' | 'verbose' object
