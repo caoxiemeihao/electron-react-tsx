@@ -8,14 +8,14 @@ module.exports = function (env) {
 
   return merge(baseConfig(env), {
     target: 'electron-render',
-    entry: resolve('../src-main/main.js'),
+    entry: resolve('../src/main/main.js'),
     output: {
-      path: resolve('../src-main'),
+      path: resolve('../src/main'),
       filename: 'bundle.js',
     },
     resolve: {
       alias: {
-        '@main': resolve('../src-main'),
+        '@main': resolve('../src/main'),
       },
     },
   });

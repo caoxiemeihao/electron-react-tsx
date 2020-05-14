@@ -32,7 +32,7 @@ module.exports = function (env) {
   const isDev = env === 'development';
 
   return merge(baseConfig(env), {
-    entry: resolve('../src-render/main.tsx'),
+    entry: resolve('../src/render/main.tsx'),
     output: {
       path: resolve('../dist'),
       filename: isDev ? 'bundle.js' : 'bundle.[hash:9].js',
@@ -60,16 +60,16 @@ module.exports = function (env) {
     },
     resolve: {
       alias: {
-        '@render': resolve('../src-render'),
+        '@render': resolve('../src/render'),
       },
     },
     plugins: [
       new HtmlWebpackPlugin({
-        template: resolve('../src-render/index.html')
+        template: resolve('../src/render/index.html')
       }),
       new CopyWebpackPlugin([
-        { from: resolve('../src-render/index.html'), to: resolve('../dist'), },
-        { from: resolve('../src-render/static'), to: resolve('../dist/static'), },
+        { from: resolve('../src/render/index.html'), to: resolve('../dist'), },
+        { from: resolve('../src/render/static'), to: resolve('../dist/static'), },
       ]),
       ...(isDev
         ? [

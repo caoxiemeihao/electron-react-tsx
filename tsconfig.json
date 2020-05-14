@@ -8,8 +8,8 @@
     "baseUrl": ".",
     "paths": {
       "@root/*": ["./*"],
-      "@main/*": ["src-marin/*"],
-      "@render/*": ["src-render/*"],
+      "@main/*": ["src/marin/*"],
+      "@render/*": ["src/render/*"],
     }
   },
 }

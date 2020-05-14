@@ -17,17 +17,17 @@ export interface IMenu {
 const menus: Array<IMenu> = [
   {
     path: '/dashboard',
-    name: '指南',
+    name: '项目介绍',
     icon: <AreaChartOutlined />,
   },
   {
     path: '/excel-down',
-    name: 'POD 图片下载',
+    name: 'excel 解析',
     icon: <FileExcelOutlined />,
   },
   {
     path: '/goods-source',
-    name: '搜品',
+    name: '商品爬虫',
     icon: <PictureOutlined />,
   },
 ]

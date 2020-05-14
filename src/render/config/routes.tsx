@@ -1,6 +1,8 @@
 import React from 'react'
 import { Route, RouteProps, Switch } from 'react-router-dom'
 import Dashboard from '../page/dashboard/dashboard'
+import ExcelDown from '../page/excel-down/excel-down'
+import GoodsSource from '../page/goods-source/goods-source'
 
 const config: Array<RouteProps> = [
   {
@@ -8,8 +10,12 @@ const config: Array<RouteProps> = [
     component: Dashboard,
   },
   {
-    path: '/excel-download',
-    component: Dashboard,
+    path: '/excel-down',
+    component: ExcelDown,
+  },
+  {
+    path: '/goods-source',
+    component: GoodsSource,
   },
 ]
 
