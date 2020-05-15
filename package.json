@@ -1,11 +1,14 @@
 {
   "name": "anan",
   "version": "1.0.0",
-  "main": "index.js",
+  "main": "src/main/main.js",
   "author": "草鞋没号 <308487730@qq.com>",
   "license": "MIT",
   "scripts": {
-    "start": "node scripts/render-start",
+    "start": "npm run dev:all",
+    "dev:all": "npm run dev:react",
+    "dev:react": "node scripts/render-start",
+    "dev:electron": "electron .",
     "build": "node scripts/render-build"
   },
   "dependencies": {
@@ -14,6 +17,7 @@
     "axios": "^0.19.2",
     "classnames": "^2.2.6",
     "core-js": "^3.6.5",
+    "electron": "^9.0.0-beta.24",
     "mobx": "^5.15.4",
     "mobx-react": "^6.2.2",
     "react": "^16.13.1",
@@ -37,6 +41,8 @@
     "copy-webpack-plugin": "^5.1.1",
     "css-loader": "^3.5.3",
     "dotenv": "^8.2.0",
+    "electron-builder": "^22.6.0",
+    "electron-is-dev": "^1.2.0",
     "eslint": "^7.0.0",
     "eslint-plugin-react": "^7.19.0",
     "eslint-plugin-react-hooks": "^4.0.0",

@@ -34,7 +34,7 @@ module.exports = function (env) {
   return merge(baseConfig(env), {
     entry: resolve('../src/render/main.tsx'),
     output: {
-      path: resolve('../dist'),
+      path: resolve('../src/dist'),
       filename: isDev ? 'bundle.js' : 'bundle.[hash:9].js',
     },
     module: {
@@ -68,8 +68,8 @@ module.exports = function (env) {
         template: resolve('../src/render/index.html')
       }),
       new CopyWebpackPlugin([
-        { from: resolve('../src/render/index.html'), to: resolve('../dist'), },
-        { from: resolve('../src/render/static'), to: resolve('../dist/static'), },
+        { from: resolve('../src/render/index.html'), to: resolve('../src/dist'), },
+        { from: resolve('../src/render/static'), to: resolve('../src/dist/static'), },
       ]),
       ...(isDev
         ? [
@@ -81,10 +81,10 @@ module.exports = function (env) {
         ]),
     ],
     devServer: {
-      port: 4100,
+      // port: 4100, 放在 .env 中设置
       // 请注意，当前只有对CSS的更改是热重加载的。JS更改将刷新浏览器。
       hot: true,
-      contentBase: resolve('../dist'), // 静态文件服务器地址
+      contentBase: resolve('../src/dist'), // 静态文件服务器地址
       stats: 'minimal', // 'none' | 'errors-only' | 'minimal' | 'normal' | 'verbose' object
       // stats: { // log 信息控制
       //   assets: false, // 能关闭静态文件搬运的 log
