@@ -52,4 +52,4 @@
 
 ---
 
-![]()
+![](https://raw.githubusercontent.com/caoxiemeihao/electron-react-tsx/master/screenshot/main-window.png)
