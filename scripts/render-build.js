@@ -1,5 +1,5 @@
 /**
- * 构建脚本
+ * 渲染进程构建脚本
  */
 process.env.NODE_ENV = 'production';
 

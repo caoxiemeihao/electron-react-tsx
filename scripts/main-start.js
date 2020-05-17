@@ -1,5 +1,5 @@
 /**
- * 主进程开脚本
+ * 主进程开发脚本
  */
 const chokidar = require('chokidar');
 const wait_on = require('wait-on');

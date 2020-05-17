@@ -11,16 +11,7 @@ module.exports = function (env) {
     module: {
       // makes missing exports an error instead of warning
       strictExportPresence: true,
-      rules: [
-        {
-          test: /\.(js|jsx|ts|tsx)$/,
-          exclude: /node_modules/,
-          loader: 'babel-loader',
-          options: {
-            cacheDirectory: true,
-          },
-        }
-      ],
+      rules: [],
     },
     resolve: {
       alias: {

@@ -109,3 +109,4 @@ dist
 **/dist
 .DS_Store
 .idea
+release

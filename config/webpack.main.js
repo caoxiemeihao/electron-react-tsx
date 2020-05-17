@@ -13,6 +13,22 @@ module.exports = function (env) {
       path: resolve('../src/main'),
       filename: 'bundle.js',
     },
+    module: {
+      rules: [
+        {
+          test: /\.(js|ts)$/,
+          exclude: /node_modules/,
+          loader: 'babel-loader',
+          options: {
+            presets: ["@babel/preset-typescript"],
+            plugins: [
+              ["@babel/plugin-proposal-class-properties", { "loose": true }],
+            ],
+            cacheDirectory: true,
+          },
+        }
+      ],
+    },
     resolve: {
       alias: {
         '@main': resolve('../src/main'),

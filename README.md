@@ -45,3 +45,11 @@
 │  │
 │  └─main.tsx             # React 入口文件
 ```
+
+### 命令
+- 启动 `yarn start` or `npm start`
+- 打包 `yarn build` or `npm run build`
+
+---
+
+![]()
