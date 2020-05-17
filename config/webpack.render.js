@@ -32,6 +32,7 @@ module.exports = function (env) {
   const isDev = env === 'development';
 
   return merge(baseConfig(env), {
+    target: 'electron-renderer',
     entry: resolve('../src/render/main.tsx'),
     output: {
       path: resolve('../src/dist'),

@@ -2,13 +2,15 @@
  * 主进程入口文件
  */
 const path = require('path');
-const { app, BrowserWindow } = require('electron');
+const { app, BrowserWindow, ipcMain } = require('electron');
 const isDev = require('electron-is-dev');
 require('dotenv').config();
 
+let win = null;
+
 function createw_indow() {
   // 创建浏览器窗口
-  const win = new BrowserWindow({
+  win = new BrowserWindow({
     width: 1024,
     height: 768,
     webPreferences: {
@@ -21,5 +23,21 @@ function createw_indow() {
 
   win.loadURL(URL);
 }
+
+// 切换 DevTools
+function toggleDevTools(bool) {
+  if (win) {
+    if (bool !== undefined) {
+      bool
+        ? win.webContents.openDevTools()
+        : win.webContents.closeDevTools()
+    } else {
+      win.webContents.toggleDevTools()
+    }
+  }
+}
+
+
+ipcMain.on('toggle-devtools', (event, bool) => toggleDevTools(bool));
 
 app.whenReady().then(createw_indow);

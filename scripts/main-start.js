@@ -1,10 +1,17 @@
+/**
+ * 主进程开脚本
+ */
 const chokidar = require('chokidar');
 const wait_on = require('wait-on');
-const electron = require('electron-connect').server.create();
+const server = require('electron-connect').server;
 require('dotenv').config();
 
+const electron = server.create({
+  port: 30081,
+  stopOnClose: true,
+});
+
 function restart() {
-  console.log('==== restart ====');
   electron.restart();
 }
 
@@ -26,6 +33,7 @@ const opts = {
   log: false, // wait until bundle finished: /
 };
 
+// 等待 webpack-dev-server 启动后启动 electron
 wait_on(opts, function (err) {
   if (err) {
     console.log(err);

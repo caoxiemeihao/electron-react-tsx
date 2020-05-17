@@ -1,5 +1,5 @@
 /**
- * 开发启动脚本
+ * 渲染进程开脚本
  */
 process.env.NODE_ENV = 'development';
 

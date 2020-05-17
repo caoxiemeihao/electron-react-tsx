@@ -3,13 +3,14 @@
  */
 import React from 'react'
 import { useHistory, useLocation } from 'react-router-dom'
-import { Layout, Menu } from 'antd'
+import { Layout, Menu, Button } from 'antd'
 import {
   MenuUnfoldOutlined,
   MenuFoldOutlined
 } from '@ant-design/icons'
 import menus, { IMenu } from '@render/config/menus'
 import cls from 'classnames'
+import { ipcRenderer } from 'electron'
 import styles from './base.mod.less'
 
 const { Sider, Header, Content } = Layout
@@ -55,6 +56,9 @@ const BaseLayout: React.FC = props => {
             className: 'ml-2',
             onClick: toggle,
           })}
+          <Button size="small" className="ml-3" onClick={() => ipcRenderer.send('toggle-devtools')}>
+            切换控制台
+          </Button>
         </Header>
         <Content className={cls("bg-white m-3 p-3 h-100", styles.content)}>
           {props.children}
