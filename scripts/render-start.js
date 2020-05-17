@@ -25,8 +25,8 @@ server.listen(port, serverConfig.host || '0.0.0.0', err => {
 });
 
 // ctrl+c、kill 命令
-['SIGINT', 'SIGTERM'].forEach(function(sig) {
-  process.on(sig, function() {
+['SIGINT', 'SIGTERM'].forEach(function (sig) {
+  process.on(sig, function () {
     server.close();
     process.exit();
   });
