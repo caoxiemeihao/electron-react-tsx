@@ -18,14 +18,14 @@ const electron = server.create({
 });
 const spinner = ora('Electron webpack build...');
 const compiler = webpack(configFactory(argv.env));
-let first_compile = true;
-let watching = false;
+let watching = null;
 
 compiler.hooks.afterCompile.tap('electron compiled', () => {
   spinner.stop();
   if (argv.watch) { // 开发模式
-    first_compile ? electron.start() : electron.restart();
-    first_compile = false;
+    // init-未启动、started-第一次启动、restarted-重新启动
+    const state = electron.electronState;
+    'init' === state ? electron.start() : electron.restart();
   }
 });
 
@@ -57,6 +57,7 @@ if (argv.watch) { // 开发模式
     resources: [`http://localhost:${argv.port || process.env.PORT}`], // dotenv[PORT === port]
     interval: 900, // poll interval in ms, default 250ms
     log: false,
+    verbose: false,
   };
 
   // 等待 webpack-dev-server 启动后启动 electron
