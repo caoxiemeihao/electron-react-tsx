@@ -13,6 +13,12 @@ module.exports = function (env) {
       strictExportPresence: true,
       rules: [],
     },
+    node: {
+      // 不提供任何 polyfill
+      global: false,
+      __filename: false,
+      __dirname: false,
+    },
     resolve: {
       alias: {
         '@root': resolve('..'),

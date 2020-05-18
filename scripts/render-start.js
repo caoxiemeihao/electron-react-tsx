@@ -7,7 +7,6 @@ const path = require('path');
 const webpack = require('webpack');
 const WebpackDevServer = require('webpack-dev-server');
 const chalk = require('chalk');
-const { argv } = require('optimist');
 require('dotenv').config();
 const configFactory = require('../config/webpack.render');
 

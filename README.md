@@ -28,11 +28,10 @@
 ├─eslint-rules/
 ├─node_modules/
 ├─script/
-│
 │  ├─render-build.js      # React 打包脚本
 │  ├─render-start.js      # React 开发脚本
-│  ├─main-build.js        # Electron 打包脚本
-│  └─main-start.js        # Electron 开发脚本
+│  ├─main-pack.js         # Electron electron-builder
+│  └─main-build.js        # Electron 打包脚本
 │
 ├─src-main/               # Electron 主进程目录
 │  ├─main.js              # Electron 开发入口
@@ -48,7 +47,27 @@
 
 ### 命令
 - 启动 `yarn start` or `npm start`
-- 打包 `yarn build` or `npm run build`
+- 打包 `yarn build-win` or `npm run build-win`
+
+```bash
+yarn build-win
+
+yarn run v1.17.3
+$ node scripts/render-build && node scripts/main-build --env=production && electron-builder -w
+[scripts/render-build.js] React webpack 构建成功
+scripts/main-pack.js Electron webpack 构建完成
+(node:11848) ExperimentalWarning: The fs.promises API is experimental
+  • electron-builder  version=22.6.0 os=10.0.18362
+  • loaded configuration  file=package.json ("build" field)
+  • description is missed in the package.json  appPackageFile=D:\github\test-electron\package.json
+  • writing effective config  file=release\builder-effective-config.yaml
+  • packaging       platform=win32 arch=x64 electron=9.0.0-beta.24 appOutDir=release\win-unpacked
+  • default Electron icon is used  reason=application icon is not set
+  • packaging       platform=win32 arch=ia32 electron=9.0.0-beta.24 appOutDir=release\win-ia32-unpacked
+  • building        target=nsis file=release\caoxie_setup_1.0.0.exe archs=x64, ia32 oneClick=false perMachine=false
+  • building block map  blockMapFile=release\caoxie_setup_1.0.0.exe.blockmap
+Done in 61.21s.
+```
 
 ---
 

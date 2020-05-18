@@ -19,7 +19,7 @@ function createw_indow() {
   });
   const URL = isDev
     ? `http://localhost:${process.env.port}`
-    : `file://${(path.join(__dirname, '../dist'))}/index.html`
+    : `file://${path.join(__dirname, '../dist/index.html')}`;
 
   win.loadURL(URL);
 }
@@ -30,9 +30,9 @@ function toggleDevTools(bool) {
     if (bool !== undefined) {
       bool
         ? win.webContents.openDevTools()
-        : win.webContents.closeDevTools()
+        : win.webContents.closeDevTools();
     } else {
-      win.webContents.toggleDevTools()
+      win.webContents.toggleDevTools();
     }
   }
 }

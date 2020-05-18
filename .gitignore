@@ -110,3 +110,5 @@ dist
 .DS_Store
 .idea
 release
+src/main/bundle.js
+src/main/bundle.js.map

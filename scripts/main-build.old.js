@@ -1,5 +1,7 @@
 /**
  * 主进程开发脚本
+ * 废弃版本
+ * 监听重启已通过 webpack compiler.watch 实现
  */
 const chokidar = require('chokidar');
 const wait_on = require('wait-on');

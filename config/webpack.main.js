@@ -5,8 +5,11 @@ const baseConfig = require('./webpack.config');
 const resolve = dir => path.join(__dirname, dir);
 
 module.exports = function (env) {
+  const isDev = env === 'development';
 
   return merge(baseConfig(env), {
+    mode: isDev ? 'development' : 'production',
+    devtool: isDev ? undefined : 'cheap-module-source-map',
     target: 'electron-main',
     entry: resolve('../src/main/main.js'),
     output: {
