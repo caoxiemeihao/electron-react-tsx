@@ -14,7 +14,7 @@ const configFactory = require('../config/webpack.main');
 const TAG = 'scripts/main-pack.js';
 const electron = server.create({
   // port: 9944, // 这个随便用，默认 30080
-  stopOnClose: true,
+  stopOnClose: true, // 当关闭最后一个窗口时，退出 electron 程
 });
 const spinner = ora('Electron webpack build...');
 const compiler = webpack(configFactory(argv.env));

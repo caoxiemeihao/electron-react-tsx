@@ -30,7 +30,7 @@ function start() {
 }
 
 const opts = {
-  resources: [`http://localhost:${process.env.port}`], // PORT === port
+  resources: [`http://localhost:${process.env.PORT}`], // PORT === port
   interval: 900, // poll interval in ms, default 250ms
   log: false, // wait until bundle finished: /
 };

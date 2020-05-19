@@ -18,7 +18,7 @@ function createw_indow() {
     },
   });
   const URL = isDev
-    ? `http://localhost:${process.env.port}`
+    ? `http://localhost:${process.env.PORT}`
     : `file://${path.join(__dirname, '../dist/index.html')}`;
 
   win.loadURL(URL);

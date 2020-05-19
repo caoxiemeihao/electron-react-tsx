@@ -14,7 +14,7 @@ const config = configFactory(process.env.NODE_ENV);
 const serverConfig = config.devServer || {};
 const compiler = webpack(config);
 const server = new WebpackDevServer(compiler, serverConfig);
-const port = process.env.port || 4000;
+const port = process.env.PORT || 4000;
 
 server.listen(port, serverConfig.host || '0.0.0.0', err => {
   if (err) {
