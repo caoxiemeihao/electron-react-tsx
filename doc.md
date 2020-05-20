@@ -598,7 +598,7 @@
   ```bash
   yarn start
   ```
-![]()
+![主窗口](https://raw.githubusercontent.com/caoxiemeihao/electron-react-tsx/master/screenshot/main-window.png)
 
 ###### electron-builder 构建配置
 - 适用于 `windows` 操作系统
@@ -658,9 +658,14 @@
     • building block map  blockMapFile=release\caoxie_setup_1.0.0.exe.blockmap
   Done in 61.21s.
   ```
+  
+![](https://raw.githubusercontent.com/caoxiemeihao/electron-react-tsx/master/screenshot/release-folder.png)
 
 - 安装下试试
 
-![]()
+![](https://raw.githubusercontent.com/caoxiemeihao/electron-react-tsx/master/screenshot/setup.png)
+![](https://raw.githubusercontent.com/caoxiemeihao/electron-react-tsx/master/screenshot/next.png)
+![](https://raw.githubusercontent.com/caoxiemeihao/electron-react-tsx/master/screenshot/install.png)
+![](https://raw.githubusercontent.com/caoxiemeihao/electron-react-tsx/master/screenshot/finish.png)
 
-大功告成啦 (ง •_•)ง
+大功告成啦！！！(~￣▽￣)~
