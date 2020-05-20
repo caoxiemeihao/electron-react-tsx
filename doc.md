@@ -1,4 +1,4 @@
-## electron、webpack、react、typescript 从零开始搭积木
+## Electron、webpack、react、typescript 从零开始搭积木
 
 [完整代码 https://github.com/caoxiemeihao/electron-react-tsx](https://github.com/caoxiemeihao/electron-react-tsx)
 
@@ -668,4 +668,4 @@
 ![](https://raw.githubusercontent.com/caoxiemeihao/electron-react-tsx/master/screenshot/install.png)
 ![](https://raw.githubusercontent.com/caoxiemeihao/electron-react-tsx/master/screenshot/finish.png)
 
-大功告成啦！！！(~￣▽￣)~
+大功告成啦！！！(ง •_•)ง
