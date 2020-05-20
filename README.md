@@ -1,5 +1,7 @@
 # test-electron
 
+[详细文档看这里 https://github.com/caoxiemeihao/electron-react-tsx/blob/master/doc.md](https://github.com/caoxiemeihao/electron-react-tsx/blob/master/doc.md)
+
 - 此项目是个人为了我一个小伙伴解放工作生产力发起的
   * 可以理解为是一个被大吹特吹的 `Python自动化办公` 的 NodeJs 版 🙃
 - 基于个人对 `webpack`、`electron`、`typescript` 的使用经验继续学习
@@ -72,3 +74,7 @@ Done in 61.21s.
 ---
 
 ![](https://raw.githubusercontent.com/caoxiemeihao/electron-react-tsx/master/screenshot/main-window.png)
+
+---
+
+![](https://raw.githubusercontent.com/caoxiemeihao/electron-react-tsx/master/screenshot/finish.png)
