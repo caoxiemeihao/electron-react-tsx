@@ -165,10 +165,10 @@
 
 - 先引入 `webpack-merge` 将公用的配置合并进来
 - 主进程中我我们也开启了 `typescript` 支持，如果你想用的话
-- target 选项根据 webpack 官方说明配置 `electron-main` 代表主进程
+- target 选项根据 webpack 官方说明配置 **electron-main** 代表主进程
+  ##### webpack 打包各个宿主环境下的 js 就是通过 target 来指定的
 - entry 主进程入口文件
 - output 主进程打包后文件出口
-
 
   ```js
   const path = require('path');
@@ -215,7 +215,9 @@
   ```
 
 ###### webpack.render.js
-- 渲染进程中，将 `babel` 的所有配置放在了 `babel-loader` 中，方便和主进程区分
+- 渲染进程可以使用所有的 `Node.js API`
+- 我们把 `target` **electron-renderer**，这也是有别与浏览器环境下开发的唯一区别
+- 将 `babel` 的所有配置放在了 `babel-loader` 中，方便和主进程区分
 - CleanWebpackPlugin 自动清理 `dist` 文件夹里面的所有文件，因为如果设置了 output 得文件带 hash 尾缀的话，文件会越来越多。所以每次构建时候自动清理下 dist 下过时的文件
 - HtmlWebpackPlugin 将打包后的 `js`、`style` 插入到 index.html 中
 - CopyWebpackPlugin 搬运一些静态文件到 dist 下
