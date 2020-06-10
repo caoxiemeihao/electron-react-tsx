@@ -16,6 +16,10 @@ module.exports = function (env) {
       path: resolve('../src/main'),
       filename: 'bundle.js',
     },
+    node: {
+      __dirname: false,
+      __filename: false,
+    },
     module: {
       rules: [
         {
