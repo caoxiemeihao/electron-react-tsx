@@ -47,7 +47,7 @@
 │  └─main.tsx             # React 入口文件
 ```
 
-### 命令
+## 命令
 - 启动 `yarn start` or `npm start`
 - 打包 `yarn build-win` or `npm run build-win`
 
@@ -78,3 +78,10 @@ Done in 61.21s.
 ---
 
 ![](https://raw.githubusercontent.com/caoxiemeihao/electron-react-tsx/master/screenshot/finish.png)
+
+---
+
+- electron 应用缓存地址
+```
+C:\Users\30848\AppData\Roaming\应用名称
+```
