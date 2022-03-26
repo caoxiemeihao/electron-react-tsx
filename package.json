@@ -84,7 +84,7 @@
     "html-webpack-plugin": "^4.3.0",
     "less": "^3.11.1",
     "less-loader": "^6.1.0",
-    "minimist": "^1.2.5",
+    "minimist": "^1.2.6",
     "ora": "^4.0.4",
     "style-loader": "^1.2.1",
     "wait-on": "^5.0.0",
